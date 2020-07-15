@@ -12,7 +12,7 @@ function merchantCard(merchant) {
   let card = `
     <div class="card">
       <div class="card-body">
-        <h3 class="card-title"><a href='/merchants/${merchant.id}'>${name}</a></h3>
+        <h4 class="card-title">Merchant: <a href='/merchants/${merchant.id}'>${name}</a></h4>
       </div>
     </div>
   `
