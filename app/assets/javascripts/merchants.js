@@ -7,12 +7,32 @@ function merchantListItem(merchant, linkPrefix) {
   return merchant_element
 }
 
+function merchantCard(merchant) {
+  let name = merchant.attributes.name
+  let card = `
+    <div class="card">
+      <div class="card-body">
+        <h3 class="card-title"><a href='/merchants/${merchant.id}'>${name}</a></h3>
+      </div>
+    </div>
+  `
+  return card
+}
+
 function merchantHeader(merchant) {
   let name = merchant.attributes.name
   let merchant_element = `
     <h1><a href='/merchants/${merchant.id}'>${name}</a></h1>
   `
   return merchant_element
+}
+
+function loadItemMerchant(item_id, merchantContainer) {
+  let uri = `/api/v1/items/${item_id}/merchant`
+  loadResource(uri, function(merchant){
+    card = merchantCard(merchant)
+    merchantContainer.append(card)
+  })
 }
 
 function merchantAdminHeader(merchant) {
