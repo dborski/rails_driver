@@ -1,10 +1,15 @@
 <div id="merchant">
 </div>
 
+<div id="revenue">
+  <h2>Total Revenue:</h2>
+</div>
+
 <div id="items">
 </div>
 
 <script>
   loadMerchantWithEdit(<%= @merchant_id %>, $('#merchant'))
+  loadRevenueForMerchant(<%= @merchant_id %>, $("#revenue"))
   loadMerchantItems(<%= @merchant_id %>, $("#items"))
 </script>
