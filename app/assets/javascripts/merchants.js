@@ -56,6 +56,14 @@ function loadAllMerchants(container) {
   })
 }
 
+function loadAllAdminMerchants(container) {
+  let uri = "/api/v1/merchants"
+  loadMultipleResources(uri, function(merchant){
+    merchant_element = merchantListItem(merchant, '/admin/merchants/')
+    container.append(merchant_element)
+  })
+}
+
 function loadMerchant(merchant_id, container) {
   let uri = `/api/v1/merchants/${merchant_id}`
   loadResource(uri, function(merchant){
